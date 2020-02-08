@@ -17,7 +17,7 @@ BEGIN
 
 	/* Each select fetches path, title, pages_needed */
 	DECLARE bcursor CURSOR FOR
-	SELECT article.path, article.title, article.num_of_paper, article.checkdate FROM article
+	SELECT article.path, article.title, article.num_of_pages, article.checkdate FROM article
 	WHERE article.state = 'ACCEPTED' AND article.path in (
 		SELECT submission.article FROM works, submission
 		WHERE works.worker = submission.reporter AND works.newspaper = newspaper
@@ -44,7 +44,7 @@ BEGIN
 	END REPEAT;
 	CLOSE bcursor;
 
-	SELECT paper.pages INTO pages_available FROM paper WHERE paper.id = paper_id;
+	SELECT paper.pages INTO pages_available FROM paper WHERE paper.id = paper_id AND paper.newspaper = newspaper;
 
 	IF (pages_available > sum) THEN  
 		SET pages_available = pages_available - sum + 1;
@@ -70,7 +70,7 @@ BEGIN
 	SELECT reporter.work_experience INTO reporter_workexperience FROM reporter WHERE reporter.email = reporter_email;
 	SELECT worker.recruitment_date INTO worker_recruitment_date FROM worker WHERE worker.email = reporter_email;
 
-	SET months_dif = FLOOR(DATEDIFF(CURDATE(), worker_recruitment_date)/30.0);
+	SET months_dif = TIMESTAMPDIFF(MONTH, worker_recruitment_date, CURDATE());
 	SET total_months = months_dif + reporter_workexperience;
 
 	SET new_salary = 650 + (total_months * 0.05) * 650;
