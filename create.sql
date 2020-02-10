@@ -75,7 +75,7 @@ CREATE TABLE IF NOT EXISTS article (
 	checkdate DATE DEFAULT NULL,
 	paper INT DEFAULT NULL,
 	category VARCHAR(128) DEFAULT NULL,
-	num_of_pages FLOAT NOT NULL,
+	num_of_pages INT NOT NULL,
 	newspaper VARCHAR(128) NOT NULL,
 	PRIMARY KEY(path),
 	CONSTRAINT CON5 FOREIGN KEY (paper) REFERENCES paper(id)

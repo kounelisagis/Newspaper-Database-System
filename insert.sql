@@ -54,9 +54,9 @@ VALUES
 INSERT INTO article
 	(path, paper, title, description, category, num_of_pages, newspaper)
 VALUES
-	('C:\Users\PC\article1.doc', 1, 'Article1', 'Olympiakos', 'Sports', 3.1, 'Kathimerini'),
-	('C:\Users\PC\article2.doc', 2, 'Article2', 'Tsipras', 'Arts', 1.9, 'Kathimerini'),
-	('C:\Users\PC\article3.doc', 3, 'Article3', 'Mitsokatis', 'Arts', 2.5, 'Real News');
+	('C:\Users\PC\article1.doc', 1, 'Article1', 'Olympiakos', 'Sports', 3, 'Kathimerini'),
+	('C:\Users\PC\article2.doc', 2, 'Article2', 'Tsipras', 'Arts', 1, 'Kathimerini'),
+	('C:\Users\PC\article3.doc', 3, 'Article3', 'Mitsokatis', 'Arts', 2, 'Real News');
 
 INSERT INTO key_words
 	(article, key_word)
@@ -105,7 +105,7 @@ afterchecks
 INSERT INTO article
 	(path, paper, title, description, category, num_of_pages, newspaper)
 VALUES
-	('C:\Users\PC\article3333433.doc', 1, 'Article13434343', 'Olympiakos', 'Sports', 0.9 ,'Kathimerini');
+	('C:\Users\PC\article3333433.doc', 1, 'Article13434343', 'Olympiakos', 'Sports', 1 ,'Kathimerini');
 INSERT INTO submission
 	(journalist, article, date)
 VALUES
@@ -113,7 +113,7 @@ VALUES
 INSERT INTO article
 	(path, paper, title, description, category, num_of_pages, newspaper)
 VALUES
-	('C:\Users\PC\oti8elw8akanw.doc', 1, 'My_article', 'Olympiakos', 'Sports', 1.4, 'Kathimerini');
+	('C:\Users\PC\oti8elw8akanw.doc', 1, 'My_article', 'Olympiakos', 'Sports', 1, 'Kathimerini');
 INSERT INTO submission
 	(journalist, article, date)
 VALUES
