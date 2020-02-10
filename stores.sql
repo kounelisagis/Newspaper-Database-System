@@ -1,10 +1,10 @@
 USE db1;
 
 
-DROP PROCEDURE IF EXISTS PaperSummary;
+DROP PROCEDURE IF EXISTS PaperInfo;
 
 DELIMITER $
-CREATE PROCEDURE PaperSummary(IN paper_id INT, IN newspaper VARCHAR(128))
+CREATE PROCEDURE PaperInfo(IN paper_id INT, IN newspaper VARCHAR(128))
 BEGIN
 	DECLARE finishedFlag INT;
 	DECLARE current_path VARCHAR(128);
@@ -20,7 +20,7 @@ BEGIN
 	SELECT article.path, article.title, article.num_of_pages, article.checkdate FROM article
 	WHERE article.state = 'ACCEPTED' AND article.path in (
 		SELECT submission.article FROM works, submission
-		WHERE works.worker = submission.reporter AND works.newspaper = newspaper
+		WHERE works.worker = submission.journalist AND works.newspaper = newspaper
 	)
 	ORDER BY article.order_in_paper ASC;
 
@@ -36,7 +36,7 @@ BEGIN
 
 			SELECT current_title as title, worker.name, worker.surname, checkdate, FLOOR(sum) as start_page, pages_needed
 			FROM worker, submission
-			WHERE worker.email = submission.reporter AND submission.article = current_path;
+			WHERE worker.email = submission.journalist AND submission.article = current_path;
 
 			SET sum = sum + pages_needed;
 		END IF;
@@ -60,18 +60,18 @@ DELIMITER ;
 DROP PROCEDURE IF EXISTS CalculateSalary;
 
 DELIMITER $
-CREATE PROCEDURE CalculateSalary(IN reporter_email VARCHAR(30), OUT new_salary FLOAT)
+CREATE PROCEDURE CalculateSalary(IN journalist_email VARCHAR(30), OUT new_salary FLOAT)
 BEGIN
-	DECLARE reporter_workexperience INT;
+	DECLARE journalist_workexperience INT;
 	DECLARE worker_recruitment_date DATE;
 	DECLARE months_dif FLOAT;
 	DECLARE total_months INT;
 	
-	SELECT reporter.work_experience INTO reporter_workexperience FROM reporter WHERE reporter.email = reporter_email;
-	SELECT worker.recruitment_date INTO worker_recruitment_date FROM worker WHERE worker.email = reporter_email;
+	SELECT journalist.work_experience INTO journalist_workexperience FROM journalist WHERE journalist.email = journalist_email;
+	SELECT worker.recruitment_date INTO worker_recruitment_date FROM worker WHERE worker.email = journalist_email;
 
 	SET months_dif = TIMESTAMPDIFF(MONTH, worker_recruitment_date, CURDATE());
-	SET total_months = months_dif + reporter_workexperience;
+	SET total_months = months_dif + journalist_workexperience;
 
 	SET new_salary = 650 + (total_months * 0.05) * 650;
 END$
@@ -101,7 +101,7 @@ DELIMITER $
 CREATE TRIGGER CheckForChief BEFORE INSERT ON submission
 FOR EACH ROW
 BEGIN	
-	IF EXISTS (SELECT * FROM newspaper WHERE chief_editor = NEW.reporter) THEN
+	IF EXISTS (SELECT * FROM newspaper WHERE chief_editor = NEW.journalist) THEN
 		UPDATE article
 		SET state = 'ACCEPTED'
 		WHERE path = NEW.article;
