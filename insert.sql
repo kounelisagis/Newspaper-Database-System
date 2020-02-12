@@ -2,23 +2,23 @@ USE db1;
 
 
 INSERT INTO publisher
-	(email, name, surname)
+	(email, password, name, surname)
 VALUES
-	('IliasFood@upatras.gr', 'Ilias', 'Fountoulis'),
-	('KonSpil@upatras.gr', 'Kostastantinos', 'Spiliotakopoulos');
+	('IliasFood@upatras.gr', '$2y$12$7jYXT5pWl3wx4vdB5KldU.KUEMgDNTCESFsUnGS9sQr3ZHolo/HVO', 'Ilias', 'Fountoulis'),
+	('KonSpil@upatras.gr', '$2y$12$ZUqxd3v1zXXi0P86wofK9.5if7BDV9yUtBtPI1xSKbBzSoHkB8/xy', 'Kostastantinos', 'Spiliotakopoulos');
 	 
 
 INSERT INTO worker
-	(email, name, surname, recruitment_date)
+	(email, password, name, surname, recruitment_date)
 VALUES
-	('st1059637@upatras.gr', 'Agisilaos', 'Kounelis', '1999-11-01'),
-	('st1059636@upatras.gr', 'Michael', 'Karavokyris', '2005-06-30'),
-	('st1059638@upatras.gr', 'Giannis', 'Koutsocheras', '2015-06-30'),
-	('st1059629@upatras.gr', 'Makis', 'Papachronopoulos', '2018-06-30'),
-	('st1058768@upatras.gr', 'Vasiliki', 'Tsimpouki', '2017-10-3'),
-	('st14001@upatras.gr', 'George', 'Kourtis','2019-10-1'),
-	('st1062268@upatras.gr','Alexis', 'Giannoutsos', '2006-08-16'),
-    ('st1074427@upatras.gr','Panagiotis','Mixalopoulos','2020-01-4');
+	('st1059637@upatras.gr', '$2y$12$gCYNxnplf/Zj7EG4S6ga5uhFlDt6RWmRJq2sxJ8JdV.T.fXZiO7Ei', 'Agisilaos', 'Kounelis', '1999-11-01'),
+	('st1059636@upatras.gr', '$2y$12$6chGN2qSM9tkKewbq7ka2uO2L/zGlkAnr9vPhAUuACnHSDxDPSruK', 'Michael', 'Karavokyris', '2005-06-30'),
+	('st1059638@upatras.gr', '$2y$12$cgFrvZkfCf/8n69KlXoBnO50CP7RWmAZP7iiHriLixIWN.GZsB4l2', 'Giannis', 'Koutsocheras', '2015-06-30'),
+	('st1059629@upatras.gr', '$2y$12$GDrBslJslsA0IEXiaK3IBec88bGUGmmhwVvgzFG1yAcm9yyGT/Dku', 'Makis', 'Papachronopoulos', '2018-06-30'),
+	('st1058768@upatras.gr', '$2y$12$eK7Ug4PpmL5kOWa5aXCsIeDQEM2ef7x5ADNhBRGzpgOfzLDZJW5yy', 'Vasiliki', 'Tsimpouki', '2017-10-3'),
+	('st14001@upatras.gr', '$2y$12$fGYm7yKjDfkJk3gs1zREPOiKVIh8zdx5ooB1RcQl3HlkD8JlhgTOy', 'George', 'Kourtis','2019-10-1'),
+	('st1062268@upatras.gr', '$2y$12$4Hq3Rxc1vfqlSvRDp9QwdONV4h3ae3PwaEJWAzUY5YkSY6K3lQb2q', 'Alexis', 'Giannoutsos', '2006-08-16'),
+    ('st1074427@upatras.gr', '$2y$12$lLIhAus6SpOG2TWdBawNmetCXzuMvca4h1EnhSteycQoUyjTarnei', 'Panagiotis','Mixalopoulos','2020-01-4');
     
 INSERT INTO journalist
 	(email, work_experience, cv)

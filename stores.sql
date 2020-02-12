@@ -115,7 +115,7 @@ BEGIN
 			IF currentDate < current_recruitment_date THEN
 				SET currentDate = current_recruitment_date;
 			END IF;
-			WHILE currentDate < CURDATE() DO
+			WHILE currentDate <= CURDATE() DO
 				CALL CalculateSalary(current_email, currentDate, current_salary);
 				SET current_sum = current_sum + current_salary;
 				SET currentDate = DATE_ADD(currentDate, INTERVAL 1 MONTH);
@@ -245,8 +245,9 @@ BEGIN
 	DECLARE available_pages INT;
 	DECLARE accepted_pages INT;
 	DECLARE paper_max INT;
+	DECLARE paper_publish_date DATE;
 	
-	SELECT paper.pages INTO available_pages
+	SELECT paper.pages, paper.publish_date INTO available_pages, paper_publish_date
 	FROM paper
 	WHERE NEW.paper = paper.id AND NEW.newspaper = paper.newspaper;
 
@@ -258,8 +259,10 @@ BEGIN
 		SET accepted_pages = 0;
 	END IF;
 
-	
-	IF (OLD.state = "INITIAL" AND NEW.state = "ACCEPTED" AND accepted_pages + NEW.num_of_pages <= available_pages) THEN
+	IF (NEW.state = "ACCEPTED" AND paper_publish_date < CURDATE()) THEN
+		SET NEW.state = "CHANGES_NEEDED";
+		SET NEW.chief_comments = "You need to change paper!";
+	ELSEIF (OLD.state = "INITIAL" AND NEW.state = "ACCEPTED" AND accepted_pages + NEW.num_of_pages <= available_pages) THEN
 		SELECT MAX(article.order_in_paper) INTO paper_max
 		FROM article
 		WHERE NEW.paper = article.paper AND NEW.newspaper = article.newspaper;
