@@ -40,6 +40,7 @@ INSERT INTO paper
 	(publish_date, pages, copies, newspaper)
 VALUES
 	('2020-4-1', 26, 10000, 'Kathimerini'),
+	('2020-4-1', 15, 20000, 'Kathimerini'),
 	('2020-4-1', 17, 15000, 'Eleftherotipia'),
 	('2020-4-9', 25, 20000, 'Real News');
 
@@ -55,17 +56,30 @@ INSERT INTO article
 	(path, paper, title, description, category, num_of_pages, newspaper)
 VALUES
 	('C:\Users\PC\article1.doc', 1, 'Article1', 'Olympiakos', 'Sports', 3, 'Kathimerini'),
-	('C:\Users\PC\article2.doc', 2, 'Article2', 'Tsipras', 'Arts', 1, 'Kathimerini'),
-	('C:\Users\PC\article3.doc', 3, 'Article3', 'Mitsokatis', 'Arts', 2, 'Real News');
-
+	('C:\Users\PC\maaaaarticle.doc', 2, 'Maaaarticle', 'Coronavirus', 'Arts', 2, 'Kathimerini'),
+	('C:\Users\PC\AAAAA.doc', 2, 'BBB', 'CCCCC', 'Arts', 3, 'Kathimerini'),
+	('C:\Users\PC\444545.doc', 2, '4777', 'NNNGHGT', 'Sports', 3, 'Kathimerini'),
+	('C:\Users\PC\article3.doc', 1, 'Article3', 'Mitsokatis', 'Arts', 2, 'Kathimerini'),
+    ('C:\Users\PC\article4.doc', 1, 'Article4', 'test', 'Arts', 2, 'Kathimerini');
+    
+    INSERT INTO submission
+	(journalist, article, date)
+VALUES
+	('st1059637@upatras.gr', 'C:\Users\PC\article1.doc', '2019-06-12'),
+    ('st1059638@upatras.gr', 'C:\Users\PC\article1.doc','2019-06-12'),
+	('st1059638@upatras.gr', 'C:\Users\PC\maaaaarticle.doc', '2020-01-4'),
+	('st1059638@upatras.gr', 'C:\Users\PC\AAAAA.doc', '2020-02-4'),
+	('st1059638@upatras.gr', 'C:\Users\PC\444545.doc', '2020-01-2'),
+	('st1059638@upatras.gr', 'C:\Users\PC\article3.doc', '2020-01-1'),
+	('st1059638@upatras.gr', 'C:\Users\PC\article4.doc', '2020-01-3');
+    
 INSERT INTO key_words
 	(article, key_word)
 VALUES
 	('C:\Users\PC\article1.doc', 'key'),
-	('C:\Users\PC\article2.doc', 'word'),
 	('C:\Users\PC\article3.doc', 'key');
 
-INSERT INTO administrator
+INSERT INTO administrative
 	(email, duty, street, number, city)
 VALUES
 	('st1059629@upatras.gr', 'admin', 'Plaz', 69, 'patras'),
@@ -88,16 +102,6 @@ VALUES
     ('Kathimerini', 'st1062268@upatras.gr'),
 	('Real News', 'st1074427@upatras.gr'),
     ('Real News', 'st1058768@upatras.gr');
-    
-    
-INSERT INTO submission
-	(journalist, article, date)
-VALUES
-	('st1059637@upatras.gr', 'C:\Users\PC\article1.doc', '2019-06-12'),
-    ('st1059638@upatras.gr', 'C:\Users\PC\article1.doc','2019-06-12'),
-	('st1059636@upatras.gr', 'C:\Users\PC\article2.doc', '2018-03-20'),
-	('st14001@upatras.gr', 'C:\Users\PC\article3.doc', '2020-01-4');
-	
 
 
 /*
