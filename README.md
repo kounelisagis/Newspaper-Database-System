@@ -1,12 +1,12 @@
 # Newspaper Database System
 
 #### Team
-Michael Karavokyris
+Michael Karavokyris<br>
 Agisilaos Kounelis
 
 #### Technology Stack
-JDK 13
-JavaFX
+JDK 13<br>
+JavaFX<br>
 MySQL
 
 #### Run
