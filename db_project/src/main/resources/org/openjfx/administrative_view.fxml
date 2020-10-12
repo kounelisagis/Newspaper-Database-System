@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" minHeight="900.0" minWidth="1700.0" prefHeight="900.0" prefWidth="1700.0" spacing="5.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.AdministrativeViewController">
+    <padding>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+    </padding>
+    <HBox>
+        <Label fx:id="introductionLabel" maxHeight="30.0" maxWidth="300.0" minHeight="30.0" minWidth="900.0" prefHeight="30.0" prefWidth="300.0" text="Role: Name + Surname" textAlignment="CENTER">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Label>
+        <Region HBox.hgrow="ALWAYS" />
+        <Button maxHeight="30.0" maxWidth="90.0" minHeight="30.0" minWidth="90.0" onAction="#switchToLogin" text="Back to Login" />
+    </HBox>
+
+    <TabPane fx:id="tabPanel" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+
+        <Tab text="Papers">
+            <TableView fx:id="papersTable">
+                <columns>
+                </columns>
+                <columnResizePolicy>
+                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                </columnResizePolicy>
+            </TableView>
+
+        </Tab>
+        <Tab text="Financial Data">
+            <VBox alignment="CENTER">
+                <HBox alignment="CENTER">
+                    <Label text="Months: " />
+                    <Spinner fx:id="monthsSpinner" editable="true" BorderPane.alignment="CENTER">
+                        <valueFactory>
+                            <SpinnerValueFactory.IntegerSpinnerValueFactory amountToStepBy="1" initialValue="1" max="240" min="1" />
+                        </valueFactory>
+                  <HBox.margin>
+                     <Insets bottom="5.0" top="5.0" />
+                  </HBox.margin>
+                    </Spinner>
+                </HBox>
+                <TableView fx:id="financialTable" VBox.vgrow="ALWAYS">
+                    <columns>
+                    </columns>
+                    <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                    </columnResizePolicy>
+                </TableView>
+                <Label fx:id="totalMoneyLabel" />
+            </VBox>
+
+        </Tab>
+
+    </TabPane>
+</VBox>

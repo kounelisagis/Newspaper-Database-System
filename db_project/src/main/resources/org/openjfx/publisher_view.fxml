@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" maxHeight="900.0" maxWidth="1700.0" minHeight="900.0" minWidth="1700.0" prefHeight="900.0" prefWidth="1700.0" spacing="5.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.PublisherViewController">
+    <padding>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+    </padding>
+    <HBox>
+        <Label fx:id="introductionLabel" maxHeight="30.0" maxWidth="300.0" minHeight="30.0" minWidth="900.0" prefHeight="30.0" prefWidth="300.0" text="Role: Name + Surname" textAlignment="CENTER">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Label>
+        <Region HBox.hgrow="ALWAYS" />
+        <Button maxHeight="30.0" maxWidth="90.0" minHeight="30.0" minWidth="90.0" onAction="#switchToLogin" text="Back to Login" />
+    </HBox>
+
+
+    <TabPane fx:id="tabPanel" minHeight="300.0" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+
+        <Tab text="Newspapers">
+            <TableView fx:id="newspapersTable">
+                <columns>
+                </columns>
+                <columnResizePolicy>
+                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                </columnResizePolicy>
+            </TableView>
+        </Tab>
+
+        <Tab text="Papers">
+            <VBox alignment="CENTER">
+                <TableView fx:id="papersTable">
+                    <columns>
+                    </columns>
+                    <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                    </columnResizePolicy>
+                </TableView>
+            </VBox>
+
+        </Tab>
+
+    </TabPane >
+
+</VBox>

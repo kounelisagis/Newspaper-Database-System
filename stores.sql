@@ -1,5 +1,6 @@
-USE db1;
+/* STORED PROCEDURES AND TRIGGERS */
 
+USE db1;
 
 DROP PROCEDURE IF EXISTS PaperInfo;
 
@@ -261,7 +262,7 @@ BEGIN
 
 	IF (NEW.state = "ACCEPTED" AND paper_publish_date < CURDATE()) THEN
 		SET NEW.state = "CHANGES_NEEDED";
-		SET NEW.chief_comments = "You need to change paper!";
+		SET NEW.comments = "Paper date has passed!";
 	ELSEIF (OLD.state = "INITIAL" AND NEW.state = "ACCEPTED" AND accepted_pages + NEW.num_of_pages <= available_pages) THEN
 		SELECT MAX(article.order_in_paper) INTO paper_max
 		FROM article
@@ -277,7 +278,7 @@ BEGIN
 
 	ELSEIF (OLD.state = "INITIAL" AND NEW.state = "ACCEPTED" AND accepted_pages + NEW.num_of_pages > available_pages) THEN
 		SET NEW.state = "CHANGES_NEEDED";
-		SET NEW.chief_comments = "You need to reduce the number of pages!";
+		SET NEW.comments = "You need to reduce the number of pages!";
 	ELSEIF (NEW.state = "INITIAL" AND accepted_pages + NEW.num_of_pages > available_pages) THEN
 		SIGNAL SQLSTATE VALUE '45000'
 		SET MESSAGE_TEXT = 'No space available';

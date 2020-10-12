@@ -1,0 +1,13 @@
+.button {
+    -fx-text-fill: blue;
+}
+
+.table-row-cell:selected { // normal selection (not focused) color
+    -fx-background-color: lightcoral;
+}
+
+.table-view .column-header,
+.table-view .column-header .filler,
+.table-view .column-header-background .filler {
+    -fx-background-color: lightgrey;
+}
