@@ -1,7 +1,7 @@
 # Newspaper Database System
 
 #### Team
-Michael Karavokyris<br>
+Michail Karavokyris<br>
 Agisilaos Kounelis
 
 #### Technology Stack
