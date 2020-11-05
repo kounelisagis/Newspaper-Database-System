@@ -36,7 +36,7 @@ st1059638@upatras.gr | news | $2y$12$cgFrvZkfCf/8n69KlXoBnO50CP7RWmAZP7iiHriLixI
 st14001@upatras.gr | CEID | $2y$12$fGYm7yKjDfkJk3gs1zREPOiKVIh8zdx5ooB1RcQl3HlkD8JlhgTOy | Journalist
 st1074427@upatras.gr | jdbc | $2y$12$lLIhAus6SpOG2TWdBawNmetCXzuMvca4h1EnhSteycQoUyjTarnei | Journalist
 
-#### GUI-Screenshots
+# GUI-Screenshots
 
 ![GUI_screenshots](https://github.com/karavokyrismichail/Newspaper-Database-System/blob/master/GUI_photos/Screenshot_4%20-%20%CE%91%CE%BD%CF%84%CE%B9%CE%B3%CF%81%CE%B1%CF%86%CE%AE.png "Screenshot_4 - Αντιγραφή.png")
 
