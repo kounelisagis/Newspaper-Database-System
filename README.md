@@ -38,13 +38,18 @@ st1074427@upatras.gr | jdbc | $2y$12$lLIhAus6SpOG2TWdBawNmetCXzuMvca4h1EnhSteycQ
 
 #### GUI-Screenshots
 
+![GUI_screenshots](https://github.com/karavokyrismichail/Newspaper-Database-System/blob/master/GUI_photos/Screenshot_4%20-%20%CE%91%CE%BD%CF%84%CE%B9%CE%B3%CF%81%CE%B1%CF%86%CE%AE.png "Screenshot_4 - Αντιγραφή.png")
+
+![GUI_screenshots](https://github.com/karavokyrismichail/Newspaper-Database-System/blob/master/GUI_photos/Screenshot_2%20-%20%CE%91%CE%BD%CF%84%CE%B9%CE%B3%CF%81%CE%B1%CF%86%CE%AE.png "Screenshot_2 - Αντιγραφή.png")
+
+![GUI_screenshots](https://github.com/karavokyrismichail/Newspaper-Database-System/blob/master/GUI_photos/Screenshot_2.png)
+
 ![GUI_screenshots](https://github.com/karavokyrismichail/Newspaper-Database-System/blob/master/GUI_photos/Screenshot_11%20-%20%CE%91%CE%BD%CF%84%CE%B9%CE%B3%CF%81%CE%B1%CF%86%CE%AE.png "Screenshot_11 - Αντιγραφή.png")
 
 ![GUI_screenshots](https://github.com/karavokyrismichail/Newspaper-Database-System/blob/master/GUI_photos/Screenshot_12%20-%20%CE%91%CE%BD%CF%84%CE%B9%CE%B3%CF%81%CE%B1%CF%86%CE%AE.png "Screenshot_12 - Αντιγραφή.png")
 
 ![GUI_screenshots](https://github.com/karavokyrismichail/Newspaper-Database-System/blob/master/GUI_photos/Screenshot_14%20-%20%CE%91%CE%BD%CF%84%CE%B9%CE%B3%CF%81%CE%B1%CF%86%CE%AE.png "Screenshot_14 - Αντιγραφή.png")
 
-![GUI_screenshots](https://github.com/karavokyrismichail/Newspaper-Database-System/blob/master/GUI_photos/Screenshot_2%20-%20%CE%91%CE%BD%CF%84%CE%B9%CE%B3%CF%81%CE%B1%CF%86%CE%AE.png "Screenshot_2 - Αντιγραφή.png")
 
-![GUI_screenshots](https://github.com/karavokyrismichail/Newspaper-Database-System/blob/master/GUI_photos/Screenshot_4%20-%20%CE%91%CE%BD%CF%84%CE%B9%CE%B3%CF%81%CE%B1%CF%86%CE%AE.png "Screenshot_4 - Αντιγραφή.png")
+
 
